@@ -1,13 +1,13 @@
 class Cell:
-    def __init__(self, sub=None, fac=None, rm=None):
-        self.sub = sub
+    def __init__(self, subject=None, fac=None, rm=None):
+        self.subject = subject
         self.fac = fac
         self.rm = rm
 
     def __str__(self):
         atr = []
-        if self.sub:
-            atr.append(f"Subject: {self.sub}")
+        if self.subject:
+            atr.append(f"subject: {self.subject}")
         if self.fac:
             atr.append(f"Faculty: {self.fac}")
         if self.rm:
@@ -23,20 +23,13 @@ def create_table(dys, hrs):
 def print_table(table):
     for i in table:
         for j in i:
-            k = j.sub
+            k = j.subject
             if k:
                 print('| '+k.center(10)+'|', end=' ')
             else:
                 print('| '+' '.center(10)+'|', end=' ')
         print('\n')
 
-def flatten(lst):
-    flat_list = []
-    for item in lst:
-        if isinstance(item, list):
-            flat_list.extend(flatten(item))
-        else:
-            flat_list.append(item)
-    return flat_list
+
 
 
