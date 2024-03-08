@@ -16,7 +16,7 @@ class Cell:
 
 
 def create_table(dys, hrs):
-    c = [[Cell() for _ in range(dys)] for _ in range(hrs)]
+    c = [[Cell() for _ in range(hrs)] for _ in range(dys)]
     return c
 
 def print_table(table):
@@ -24,12 +24,12 @@ def print_table(table):
         for j in i:
             k = j.subject
             if k:
-                print('| '+k.center(10)+'|', end=' ')
+                print('| '+k.center(12)+'|', end=' ')
             else:
-                print('| '+' '.center(10)+'|', end=' ')
+                print('| '+' '.center(12)+'|', end=' ')
         print('\n')
 
-def subject_frequency(subject):
+def subject_frequency(subjects):
     l =[]
     for i in range(len(subjects)):
         l += [[subjects.Subject[i],subjects.Staff[i]]]*subjects.Frequency[i]
